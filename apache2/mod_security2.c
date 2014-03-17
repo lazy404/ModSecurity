@@ -39,10 +39,13 @@
 
 #include "msc_status_engine.h"
 
-
 #ifdef WITH_YAJL
 #include <yajl/yajl_version.h>
 #endif /* WITH_YAJL */
+
+#ifdef WITH_LIBMEMCACHED
+#include <memcached.h>
+#endif
 
 /* ModSecurity structure */
 
@@ -61,6 +64,10 @@ char DSOLOCAL *guardianlog_name = NULL;
 apr_file_t DSOLOCAL *guardianlog_fd = NULL;
 
 char DSOLOCAL *guardianlog_condition = NULL;
+
+#if WITH_LIBMEMCACHED
+memcached_st *memcache = NULL;
+#endif
 
 unsigned long int DSOLOCAL msc_pcre_match_limit = 0;
 

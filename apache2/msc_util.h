@@ -159,4 +159,13 @@ int DSOLOCAL tree_contains_ip(apr_pool_t *mp, TreeRoot *rtree,
 int DSOLOCAL ip_tree_from_param(apr_pool_t *pool,
     char *param, TreeRoot **rtree, char **error_msg);
 
+size_t msc_curl_write_memory_cb(void *contents, size_t size,
+    size_t nmemb, void *userp);
+
+struct msc_curl_memory_buffer_t
+{
+   char *memory;
+   size_t size;
+};
+
 #endif

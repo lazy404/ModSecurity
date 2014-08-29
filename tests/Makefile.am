@@ -28,7 +28,6 @@ msc_test_SOURCES = msc_test.c \
     ../apache2/re_variables.c \
     ../standalone/regex.c \
     ../standalone/server.c
-
 msc_test_CFLAGS = @APR_CFLAGS@ \
     @APU_CFLAGS@ \
     @APXS_CFLAGS@ \
